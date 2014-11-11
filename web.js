@@ -19,7 +19,9 @@ app.use(bodyParser());
 
 app.post("/givemeafact", function(req, res) {
   console.log(req);
-  res.send("You'll get a fact");
+
+  var message = "<Response><Sms>You'll get a fact</Sms></Response>";
+  res.send(message);
 });
 
 // When the form is submitted, send the message to the person listed
