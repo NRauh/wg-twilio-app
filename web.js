@@ -17,12 +17,15 @@ app.use(express.static(__dirname + '/public'))
 // instruct the app to use the `bodyParser()` middleware for all routes
 app.use(bodyParser());
 
+
+var facts = ["Cats don't like sugar gliders", "Eagles eat Panthers on Monday night football", "Cat doesn't like you", "Cat does like you", "Give Cat toy", "Babies like Cat", "Don't put Cat in corner"];
+
+
 app.post("/givemeafact", function(req, res) {
-  console.log(req.body.Body);
   var tmpMessage;
 
   if (req.body.Body === "Fact!") {
-    tmpMessage = "Fact!";
+    tmpMessage = facts[Math.floor(Math.random() * facts.length)];
   } else {
     tmpMessage = "No Fact for you!";
   }
@@ -30,6 +33,8 @@ app.post("/givemeafact", function(req, res) {
   var message = "<Response><Sms>"+tmpMessage+"</Sms></Response>";
   res.send(message);
 });
+
+
 
 // When the form is submitted, send the message to the person listed
 app.post('/', function(request, response) {
