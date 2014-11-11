@@ -21,7 +21,7 @@ app.post("/givemeafact", function(req, res) {
   console.log(req.body.Body);
   var tmpMessage;
 
-  if ("/fact/ig".match(req.body.Body)) {
+  if (req.body.Body = "Fact!") {
     tmpMessage = "Fact!";
   } else {
     tmpMessage = "No Fact for you!";
