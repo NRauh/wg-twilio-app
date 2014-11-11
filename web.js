@@ -21,6 +21,16 @@ app.use(bodyParser());
 var facts = ["Cats don't like sugar gliders", "Eagles eat Panthers on Monday night football", "Cat doesn't like you", "Cat does like you", "Give Cat toy", "Babies like Cat", "Don't put Cat in corner"];
 
 
+app.post("/phoneafact", function(req, res) {
+  var tmpMessage;
+  
+  tmpMessage = facts[Math.floor(Math.random() + facts.length()];
+
+  var message = '<Response><Say voice="alice" language="de-DE">Achtung! Achtung! Here ist un cat fact!' + tmpMessage + '. Gutenacht!</Say></Response>';
+
+  res.send(message);
+});
+
 app.post("/givemeafact", function(req, res) {
   var tmpMessage;
 
