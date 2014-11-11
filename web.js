@@ -18,7 +18,7 @@ app.use(express.static(__dirname + '/public'))
 app.use(bodyParser());
 
 app.post("/givemeafact", function(req, res) {
-  console.log(req);
+  console.log(req.body);
 
 /*
   if ("/fact/ig") {
