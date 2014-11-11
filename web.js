@@ -18,13 +18,15 @@ app.use(express.static(__dirname + '/public'))
 app.use(bodyParser());
 
 app.post("/givemeafact", function(req, res) {
-  console.log(req.body);
+  console.log(req.body.Body);
+  var tmpMessage;
 
-/*
-  if ("/fact/ig") {
-    v
-*/
-  var tmpMessage = "Fact!";
+  if ("/fact/ig".test(req.body.Body)) {
+    tmpMessage = "Fact!";
+  } else {
+    tmpMessage = "No Fact for you!";
+  }
+
   var message = "<Response><Sms>"+tmpMessage+"</Sms></Response>";
   res.send(message);
 });
