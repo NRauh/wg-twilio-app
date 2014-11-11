@@ -18,7 +18,7 @@ app.use(express.static(__dirname + '/public'))
 app.use(bodyParser());
 
 
-var facts = ["Cats don't like sugar gliders", "Eagles eat Panthers on Monday night football", "Cat doesn't like you", "Cat does like you", "Give Cat toy", "Babies like Cat", "Don't put Cat in corner"];
+var facts = ["Cats don't like sugar gliders", "Eagles eat Panthers on Monday night football", "Cat doesn't like you", "Cat does like you", "Give Cat toy", "Babies like Cat", "Don't put Cat in corner", "Cat says 'ack thbbbbt'", "Cat studies Frued", "Schrodinger may or may not like Cat"];
 
 
 app.post("/phoneafact", function(req, res) {
