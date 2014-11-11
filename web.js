@@ -43,6 +43,7 @@ app.post('/', function(request, response) {
     var results = sendTextToFriend(number, response);
 
     console.log(response);
+    console.log("\n\n\n"+results);
 });
 
 /**
@@ -54,7 +55,7 @@ var sendTextToFriend = function(number, response) {
     client.sendMessage({
         to: number,
         from: '+16024834889',
-        body: message
+        body: "You've subscribed to cat facts"
     }, function(err, responseData) {
         if (!err) {
             console.log(responseData.from);
