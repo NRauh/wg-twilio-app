@@ -26,7 +26,7 @@ app.post("/phoneafact", function(req, res) {
   
   tmpMessage = facts[Math.floor(Math.random() * facts.length)];
 
-  var message = '<Response><Say voice="alice" language="de-DE">Achtung! Achtung! Here ist un cat fact!' + tmpMessage + '. Gutenacht!</Say></Response>';
+  var message = '<Response><Say voice="alice" language="de-DE">Achtung! Achtung! Here ist un cat fact! ' + tmpMessage + '. Gutenacht!</Say></Response>';
 
   res.send(message);
 });
