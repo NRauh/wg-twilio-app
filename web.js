@@ -24,7 +24,7 @@ app.post("/givemeafact", function(req, res) {
   if ("/fact/ig") {
     v
 */
-  console.log(req.body);
+  var tmpMessage = "Fact!";
   var message = "<Response><Sms>"+tmpMessage+"</Sms></Response>";
   res.send(message);
 });
