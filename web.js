@@ -20,7 +20,12 @@ app.use(bodyParser());
 app.post("/givemeafact", function(req, res) {
   console.log(req);
 
-  var message = "<Response><Sms>You'll get a fact</Sms></Response>";
+/*
+  if ("/fact/ig") {
+    v
+*/
+  console.log(req.body);
+  var message = "<Response><Sms>"+tmpMessage+"</Sms></Response>";
   res.send(message);
 });
 
