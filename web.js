@@ -24,7 +24,7 @@ var facts = ["Cats don't like sugar gliders", "Eagles eat Panthers on Monday nig
 app.post("/phoneafact", function(req, res) {
   var tmpMessage;
   
-  tmpMessage = facts[Math.floor(Math.random() + facts.length()];
+  tmpMessage = facts[Math.floor(Math.random() * facts.length)];
 
   var message = '<Response><Say voice="alice" language="de-DE">Achtung! Achtung! Here ist un cat fact!' + tmpMessage + '. Gutenacht!</Say></Response>';
 
