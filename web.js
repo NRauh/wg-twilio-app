@@ -61,7 +61,7 @@ var sendTextToFriend = function(number, response) {
     client.sendMessage({
         to: number,
         from: '+16024834889',
-        body: "You've subscribed to cat facts"
+        body: 'You\'ve subscribed to cat facts. Send "Fact!" to get a fact.'
     }, function(err, responseData) {
         if (!err) {
             console.log(responseData.from);
