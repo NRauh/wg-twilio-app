@@ -17,16 +17,8 @@ app.use(express.static(__dirname + '/public'))
 // instruct the app to use the `bodyParser()` middleware for all routes
 app.use(bodyParser());
 
-// When the Reddit endpoint is POSTed, return top posts
-app.post('/reddit', function(request, response) {
-    restler.get('http://reddit.com/.json').on('complete', function(reddit) {
-        var titles = "<Response><Sms>Top Five Reddit Posts:</Sms> ";
-        for(var i=0; i<5; i++) {
-            titles += "<Sms> • “" + reddit.data.children[i].data.title + "” (http://reddit.com" + reddit.data.children[i].data.permalink + ") </Sms>";
-        }
-        titles += "</Response>";
-        response.send(titles);
-    });
+app.post("/givemeafact", function(req, res) {
+  console.log(req);
 });
 
 // When the form is submitted, send the message to the person listed
@@ -41,9 +33,6 @@ app.post('/', function(request, response) {
     var number = request.body.number;
 
     var results = sendTextToFriend(number, response);
-
-    console.log(response);
-    console.log("\n\n\n"+results);
 });
 
 /**
