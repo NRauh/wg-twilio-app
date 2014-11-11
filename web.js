@@ -52,7 +52,7 @@ app.post('/', function(request, response) {
 var sendTextToFriend = function(number, message, response) {
     client.sendMessage({
         to: number,
-        from: '+15155325531',
+        from: '+16024834889',
         body: message
     }, function(err, responseData) {
         if (!err) {
