@@ -38,18 +38,19 @@ app.post('/', function(request, response) {
     };
 
     var requestedNumber = request.body.friend;
-    var number = numbers[requestedNumber];
+    var number = request.body.number;
 
-    var results = sendTextToFriend(number, request.body.message, response);
+    var results = sendTextToFriend(number, response);
+
+    console.log(response);
 });
 
 /**
  * Send a text message to the chosen friend
  * @param  {string} number  Number of friend
- * @param  {string} message Message to send to friend
  * @return {void}
  */
-var sendTextToFriend = function(number, message, response) {
+var sendTextToFriend = function(number, response) {
     client.sendMessage({
         to: number,
         from: '+16024834889',
