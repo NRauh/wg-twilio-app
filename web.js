@@ -19,19 +19,12 @@ app.use(bodyParser());
 
 app.post("/givemeafact", function(req, res) {
   console.log(req);
+  res.send("You'll get a fact");
 });
 
 // When the form is submitted, send the message to the person listed
 app.post('/', function(request, response) {
-    var numbers = {
-        'josh': '+15152973129',
-        'matt': '+15152973129',
-        'justin': '+15152973129'
-    };
-
-    var requestedNumber = request.body.friend;
     var number = request.body.number;
-
     var results = sendTextToFriend(number, response);
 });
 
